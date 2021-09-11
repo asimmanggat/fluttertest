@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:testflutter/home_page.dart';
 
 void main(){
   runApp(testflutter());
@@ -9,14 +10,10 @@ class testflutter extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+
     return MaterialApp(
-      home: Material(
-        child: Center(
-        child : Container(
-          child: Text("Welcome Asim!"),
-            ),
-          ),
-        ),
+      home: HomePage(),
     );
   }
 }
