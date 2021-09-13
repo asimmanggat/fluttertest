@@ -5,18 +5,20 @@ class HomePage extends StatelessWidget {
   final String name = "Asim";
   final double pi = 3.14;
 
+  const HomePage({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("FlutterTest App"),
+        title: const Text("FlutterTest App"),
       ),
       body: Center(
         child: Container(
           child: Text("Welcome to $days App by $name the value of PI is $pi"),
         ),
       ),
-      drawer: Drawer(),
+      drawer: const Drawer(),
     );
   }
 }
