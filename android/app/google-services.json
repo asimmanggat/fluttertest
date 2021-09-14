@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1064346513826",
+    "project_id": "interwoodsalesapp",
+    "storage_bucket": "interwoodsalesapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1064346513826:android:db8c5491975313b4df82fb",
+        "android_client_info": {
+          "package_name": "com.example.testflutter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1064346513826-n9o128d2dg93123kb16o2cqf8s9m5ibp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCdN2o0aZxlnyRLLIGHwqkMDEllIeroUvs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1064346513826-n9o128d2dg93123kb16o2cqf8s9m5ibp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
