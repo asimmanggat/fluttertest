@@ -8,7 +8,9 @@ class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Material(
+    
         color: Colors.white,
+        child: SingleChildScrollView(
         child: Column(
           children: [
             const SizedBox(
@@ -42,12 +44,16 @@ class LoginPage extends StatelessWidget {
                       Navigator.pushNamed(context, MyRoutes.homeRoute);
                     },
                     child: const Text("Login"),
-                    style: TextButton.styleFrom(),
+                    style: TextButton.styleFrom(
+                      minimumSize: Size(100, 50)
+                    ),
                   )
                 ],
               ),
             )
           ],
-        ));
+        )
+        )
+    );
   }
 }
