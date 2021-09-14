@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:testflutter/utils/routes.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -10,6 +11,9 @@ class LoginPage extends StatelessWidget {
         color: Colors.white,
         child: Column(
           children: [
+            const SizedBox(
+                    height: 50.0,
+                  ),
             Image.asset("assets/images/login.png", fit: BoxFit.cover),
             const Text(
               "Login",
@@ -35,8 +39,7 @@ class LoginPage extends StatelessWidget {
                   ),
                   ElevatedButton(
                     onPressed: () {
-                      // ignore: avoid_print
-                      print("Hello...");
+                      Navigator.pushNamed(context, MyRoutes.homeRoute);
                     },
                     child: const Text("Login"),
                     style: TextButton.styleFrom(),

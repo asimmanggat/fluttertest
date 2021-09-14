@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:testflutter/pages/home_page.dart';
+import 'package:testflutter/utils/routes.dart';
 
 import 'login_page.dart';
 
@@ -20,10 +21,10 @@ class testflutter extends StatelessWidget {
         primarySwatch: Colors.green,
         fontFamily: GoogleFonts.lato().fontFamily,
       ),
-      initialRoute: "/login",
+      initialRoute: MyRoutes.loginRoute,
       routes: {
-        "/": (context) => const HomePage(),
-        "/login": (context) => const LoginPage(),
+        MyRoutes.homeRoute: (context) => const HomePage(),
+        MyRoutes.loginRoute: (context) => const LoginPage(),
       },
     );
   }
