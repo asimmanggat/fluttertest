@@ -1,24 +1,46 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:testflutter/utils/routes.dart';
 
-class LoginPage extends StatelessWidget {
+class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
+
+  @override
+  State<LoginPage> createState() => _LoginPageState();
+}
+
+class _LoginPageState extends State<LoginPage> {
+
+final _formKey = GlobalKey<FormState>();
+
+moveToHome(BuildContext context){
+  if(_formKey.currentState!.validate()){
+    Navigator.pushNamed(context, MyRoutes.homeRoute);
+  }
+  
+}
 
   @override
   Widget build(BuildContext context) {
     return Material(
-    
+
         color: Colors.white,
         child: SingleChildScrollView(
+        child: Form(
+        key: _formKey,
         child: Column(
           children: [
             const SizedBox(
-                    height: 50.0,
+                    height: 30.0,
                   ),
             Image.asset("assets/images/login.png", fit: BoxFit.cover),
-            const Text(
-              "Login",
+            const SizedBox(
+                    height: 30.0,
+                  ),
+            Text(
+              "Welcome",
               style: TextStyle(
                 fontSize: 22,
                 fontWeight: FontWeight.bold,
@@ -31,17 +53,31 @@ class LoginPage extends StatelessWidget {
                 children: [
                   TextFormField(
                     decoration: const InputDecoration(hintText: "Username"),
+                    validator: (value){
+                      if(value!.isEmpty){
+                        return "Username Required";
+                      }else if(value.length < 3){
+                        return "Username should be min. 5 characters";
+                      }
+                      return null;
+                    },
                   ),
                   TextFormField(
                     obscureText: true,
                     decoration: const InputDecoration(hintText: "Password"),
+                    validator: (value){
+                      if(value!.isEmpty){
+                        return "Password Required";
+                      }
+                      return null;
+                    },
                   ),
                   const SizedBox(
                     height: 20.0,
                   ),
                   ElevatedButton(
                     onPressed: () {
-                      Navigator.pushNamed(context, MyRoutes.homeRoute);
+                      moveToHome(context);
                     },
                     child: const Text("Login"),
                     style: TextButton.styleFrom(
@@ -52,6 +88,7 @@ class LoginPage extends StatelessWidget {
               ),
             )
           ],
+        )
         )
         )
     );
