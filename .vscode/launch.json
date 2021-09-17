@@ -8,7 +8,7 @@
             "name": "fluttertest",
             "request": "launch",
             "type": "dart",
-            "program": "lib/pages/main.dart "
+            "program": "lib/main.dart "
         },
         {
             "name": "fluttertest (profile mode)",

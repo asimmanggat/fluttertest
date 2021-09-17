@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:testflutter/pages/home_page.dart';
 import 'package:testflutter/utils/routes.dart';
-// ignore: import_of_legacy_library_into_null_safe
 import 'package:firebase_core/firebase_core.dart';
-
-import 'login_page.dart';
+import 'pages/login_page.dart';
+import 'pages/signup_page.dart';
+import 'widgets/drawer.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -25,10 +25,11 @@ class testflutter extends StatelessWidget {
         primarySwatch: Colors.green,
         fontFamily: GoogleFonts.lato().fontFamily,
       ),
-      initialRoute: MyRoutes.loginRoute,
+      initialRoute: MyRoutes.homeRoute,
       routes: {
         MyRoutes.homeRoute: (context) => const HomePage(),
         MyRoutes.loginRoute: (context) => const LoginPage(),
+        MyRoutes.signupRoute: (context) => const SignUpPage(),
       },
     );
   }

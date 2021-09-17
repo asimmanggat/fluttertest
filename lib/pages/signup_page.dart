@@ -2,14 +2,14 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:testflutter/utils/routes.dart';
 
-class LoginPage extends StatefulWidget {
-  const LoginPage({Key? key}) : super(key: key);
+class SignUpPage extends StatefulWidget {
+  const SignUpPage({Key? key}) : super(key: key);
 
   @override
-  State<LoginPage> createState() => _LoginPageState();
+  State<SignUpPage> createState() => _SignUpPageState();
 }
 
-class _LoginPageState extends State<LoginPage> {
+class _SignUpPageState extends State<SignUpPage> {
   final _formKey = GlobalKey<FormState>();
 
   moveToHome(BuildContext context) {
@@ -32,7 +32,7 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                     Image.asset("assets/images/logo.png", fit: BoxFit.cover),
                     const Text(
-                      "Welcome",
+                      "Sign Up",
                       style: TextStyle(
                         fontSize: 24,
                         fontWeight: FontWeight.bold,
@@ -70,35 +70,30 @@ class _LoginPageState extends State<LoginPage> {
                             },
                           ),
                           const SizedBox(
+                            height: 10.0,
+                          ),
+                          TextFormField(
+                            obscureText: true,
+                            decoration: const InputDecoration(
+                                hintText: "Confirm Password"),
+                            validator: (value) {
+                              if (value!.isEmpty) {
+                                return "Password Required";
+                              }
+                              return null;
+                            },
+                          ),
+                          const SizedBox(
                             height: 50.0,
                           ),
                           ElevatedButton(
-                            onPressed: () {
-                              moveToHome(context);
-                            },
+                            onPressed: () {},
                             child: const Text(
-                              "Login",
+                              "Register",
                               textScaleFactor: 1.2,
                             ),
                             style: TextButton.styleFrom(
-                                minimumSize: Size(500, 50)),
-                          ),
-                          const SizedBox(
-                            height: 10.0,
-                          ),
-                          ElevatedButton(
-                            onPressed: () {
-                              Navigator.pushNamed(
-                                  context, MyRoutes.signupRoute);
-                            },
-                            child: const Text(
-                              "Signup",
-                              textScaleFactor: 1.2,
-                            ),
-                            style: ElevatedButton.styleFrom(
                               minimumSize: Size(500, 50),
-                              onPrimary: Colors.green,
-                              primary: Colors.white,
                             ),
                           ),
                         ],
