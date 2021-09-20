@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:testflutter/utils/routes.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -15,6 +16,14 @@ class _LoginPageState extends State<LoginPage> {
   moveToHome(BuildContext context) {
     if (_formKey.currentState!.validate()) {
       Navigator.pushNamed(context, MyRoutes.homeRoute);
+      Fluttertoast.showToast(
+          msg: "you're logged In",
+          toastLength: Toast.LENGTH_SHORT,
+          gravity: ToastGravity.CENTER,
+          timeInSecForIosWeb: 1,
+          backgroundColor: Colors.red,
+          textColor: Colors.white,
+          fontSize: 16.0);
     }
   }
 

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:testflutter/widgets/drawer.dart';
-import 'package:firebase_storage/firebase_storage.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -14,7 +13,10 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: AppBar(
         title: const Text("Home"),
-        elevation: 5,
+        titleTextStyle: TextStyle(color: Colors.white, fontSize: 20),
+        elevation: 3,
+        backgroundColor: Colors.green,
+        iconTheme: IconThemeData(color: Colors.white),
       ),
       body: Center(),
       drawer: const MyDrawer(),

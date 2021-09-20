@@ -2,6 +2,8 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:testflutter/utils/routes.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 class MyDrawer extends StatelessWidget {
   const MyDrawer({Key? key}) : super(key: key);
@@ -44,17 +46,26 @@ class MyDrawer extends StatelessWidget {
               style: TextStyle(color: Colors.green),
               textScaleFactor: 1.2,
             ),
+            onTap: () {
+              Navigator.pushNamed(context, MyRoutes.profileRoute);
+            },
           ),
           ListTile(
-            leading: Icon(
-              CupertinoIcons.arrow_counterclockwise,
-              color: Colors.green,
-            ),
-            title: Text(
-              "Logout",
-              style: TextStyle(color: Colors.green),
-              textScaleFactor: 1.2,
-            ),
+            leading: Icon(CupertinoIcons.arrow_counterclockwise,
+                color: Colors.green),
+            title: Text("Logout",
+                style: TextStyle(color: Colors.green), textScaleFactor: 1.2),
+            onTap: () {
+              Navigator.pushNamed(context, MyRoutes.loginRoute);
+              Fluttertoast.showToast(
+                  msg: "You're logged out",
+                  toastLength: Toast.LENGTH_SHORT,
+                  gravity: ToastGravity.CENTER,
+                  timeInSecForIosWeb: 1,
+                  backgroundColor: Colors.red,
+                  textColor: Colors.white,
+                  fontSize: 16.0);
+            },
           )
         ],
       ),
