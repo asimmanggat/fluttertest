@@ -2,7 +2,6 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-// import 'package:firebase_storage/firebase_storage.dart';
 
 class MyDrawer extends StatelessWidget {
   const MyDrawer({Key? key}) : super(key: key);
@@ -10,7 +9,9 @@ class MyDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(
+        child: Container(
       child: ListView(
+        padding: EdgeInsets.zero,
         // ignore: prefer_const_literals_to_create_immutables
         children: [
           DrawerHeader(
@@ -20,12 +21,62 @@ class MyDrawer extends StatelessWidget {
                   accountName: Text("Asim"),
                   accountEmail: Text("asim.nazir@iwm.com.pk"),
                   currentAccountPicture: CircleAvatar(
-                      backgroundImage: AssetImage('assets/images/asim.jpg')))),
+                      backgroundImage: NetworkImage(
+                          "https://firebasestorage.googleapis.com/v0/b/interwoodsalesapp.appspot.com/o/asim.jpg?alt=media&token=bae79b05-a5de-4801-a953-9deaeefcd63c")))),
+          ListTile(
+            leading: Icon(
+              CupertinoIcons.home,
+              color: Colors.green,
+            ),
+            title: Text(
+              "Home",
+              style: TextStyle(color: Colors.green),
+              textScaleFactor: 1.2,
+            ),
+          ),
+          ListTile(
+            leading: Icon(
+              CupertinoIcons.profile_circled,
+              color: Colors.green,
+            ),
+            title: Text(
+              "Profile",
+              style: TextStyle(color: Colors.green),
+              textScaleFactor: 1.2,
+            ),
+          ),
+          ListTile(
+            leading: Icon(
+              CupertinoIcons.arrow_counterclockwise,
+              color: Colors.green,
+            ),
+            title: Text(
+              "Logout",
+              style: TextStyle(color: Colors.green),
+              textScaleFactor: 1.2,
+            ),
+          )
         ],
       ),
-    );
+    ));
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 // Image getting code from firebase

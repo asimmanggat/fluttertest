@@ -5,7 +5,6 @@ import 'package:testflutter/utils/routes.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'pages/login_page.dart';
 import 'pages/signup_page.dart';
-import 'widgets/drawer.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
