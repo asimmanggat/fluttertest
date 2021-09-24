@@ -4,7 +4,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:testflutter/utils/routes.dart';
-import 'package:testflutter/widgets/drawer.dart';
 
 class ProfilePage extends StatelessWidget {
   const ProfilePage({Key? key}) : super(key: key);
@@ -22,9 +21,9 @@ class ProfilePage extends StatelessWidget {
               height: 30.0,
             ),
             CircleAvatar(
-                radius: 70,
-                backgroundImage: NetworkImage(
-                    "https://firebasestorage.googleapis.com/v0/b/interwoodsalesapp.appspot.com/o/asim.jpg?alt=media&token=bae79b05-a5de-4801-a953-9deaeefcd63c")),
+              radius: 70,
+              backgroundImage: AssetImage("assets/images/asim.jpg"),
+            ),
             const SizedBox(
               height: 50.0,
             ),

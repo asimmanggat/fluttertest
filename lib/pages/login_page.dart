@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:testflutter/utils/routes.dart';
@@ -93,7 +95,7 @@ class _LoginPageState extends State<LoginPage> {
                                 minimumSize: Size(500, 50)),
                           ),
                           const SizedBox(
-                            height: 10.0,
+                            height: 20.0,
                           ),
                           ElevatedButton(
                             onPressed: () {
