@@ -23,7 +23,8 @@ class MyDrawer extends StatelessWidget {
                   accountName: Text("Asim"),
                   accountEmail: Text("asim.nazir@iwm.com.pk"),
                   currentAccountPicture: CircleAvatar(
-                      backgroundImage: AssetImage("assets/images/asim.jpg")))),
+                      backgroundImage: NetworkImage(
+                          "https://firebasestorage.googleapis.com/v0/b/interwoodsalesapp.appspot.com/o/asim%202.jpg?alt=media&token=bae79b05-a5de-4801-a953-9deaeefcd63c")))),
           ListTile(
             leading: Icon(
               CupertinoIcons.home,

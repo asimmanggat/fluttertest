@@ -24,6 +24,7 @@ class testflutter extends StatelessWidget {
       themeMode: ThemeMode.light,
       theme: MyTheme.greenTheme(context),
       initialRoute: MyRoutes.homeRoute,
+      debugShowCheckedModeBanner: false,
       routes: {
         MyRoutes.homeRoute: (context) => const HomePage(),
         MyRoutes.loginRoute: (context) => const LoginPage(),

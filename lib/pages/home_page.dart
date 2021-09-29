@@ -1,7 +1,9 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:testflutter/models/products.dart';
 import 'package:testflutter/widgets/drawer.dart';
+import 'package:testflutter/widgets/products_widget.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -13,14 +15,18 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("Home"),
-        titleTextStyle: TextStyle(color: Colors.white, fontSize: 20),
-        elevation: 3,
-        backgroundColor: Colors.green,
-        iconTheme: IconThemeData(color: Colors.white),
+      appBar: AppBar(title: const Text("Home")),
+      body: Padding(
+        padding: EdgeInsets.all(5.0),
+        child: ListView.builder(
+          itemCount: ProductsModel.products.length,
+          itemBuilder: (context, index) {
+            return ProductsWidget(
+              product: ProductsModel.products[index],
+            );
+          },
+        ),
       ),
-      body: Center(),
       drawer: const MyDrawer(),
     );
   }

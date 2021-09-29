@@ -22,7 +22,8 @@ class ProfilePage extends StatelessWidget {
             ),
             CircleAvatar(
               radius: 70,
-              backgroundImage: AssetImage("assets/images/asim.jpg"),
+              backgroundImage: NetworkImage(
+                  "https://firebasestorage.googleapis.com/v0/b/interwoodsalesapp.appspot.com/o/asim.jpg?alt=media&token=bae79b05-a5de-4801-a953-9deaeefcd63c"),
             ),
             const SizedBox(
               height: 50.0,
